@@ -1,0 +1,154 @@
+.taskbar
+{
+    content: "";
+    width: 100%;
+    height: 50px;
+    background-color: black;    
+    position: fixed;
+    bottom: 0;
+    z-index: 11;
+}
+.app-task, .search-task, .date-task, .logout-task, .others
+{
+    display: inline-flex;
+    z-index: 1;
+}
+.taskbar i:hover, .right-task td:hover
+{
+    background-color: rgba(255, 255, 255, 0.199);
+    cursor: alias;
+}
+.taskbar .atask i
+{
+    padding: 10px;
+    font-size: 30px;
+    color: white;
+}
+.taskbar .atask i:hover
+{
+    background-color: rgba(255, 255, 255, 0.288);
+}
+.atask
+{
+    position: relative;
+}
+.myprogram
+{
+    display: none;
+    z-index: -9;
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    top: -400px;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    animation: 0.5s menu_animate;
+}
+@keyframes menu_animate 
+{
+    from{top: 0px; opacity: 0;}
+    to{top: -399px;opacity: 1;}    
+}
+#my-program ul
+{
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#my-program ul li
+{
+    width: 100%;
+    height: 57px;
+    border-spacing: 10px;
+}
+#my-program ul li button
+{    
+    color: white;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    border: none;
+    text-align: left;
+    font-family: "Oswald";
+    font-size: 20px;
+}
+#my-program ul li button:hover
+{
+    background-color: rgba(187, 186, 186, 0.233);
+}
+.taskbar input
+{
+    background-color: rgb(59, 59, 59);
+    color: white;
+    border: none;
+    padding: 12px 12px;
+    outline: none;
+    width: 380px;
+    font-size: 17px;
+    height: 55px;
+}
+.right-task
+{
+    position: absolute;
+    right: 0;
+}
+.right-task table
+{
+    width: 180px;
+}
+.right-task i
+{
+    padding: 12.5px;
+    font-size: 30px;
+    color: white;
+}
+.date-task
+{
+    content: "";
+    font-size: 15px;
+    width: 100px;
+    height: 50px;
+    color: white;
+}
+#date, #time
+{
+    width: 100%;
+    display: block;
+}
+.others i
+{
+    padding: 12.5px;
+    color: white;
+    font-size: 30px;
+}
+.o1, .o2
+{
+    margin-right: 5px;
+    display: inline-flex;
+    position: relative;
+}
+.o1 span, .o2 span
+{
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 15px;
+    top: 55%;
+    right: 20%;
+    border-radius: 50%;
+    background-color: red;
+}
+
+@media only screen and (max-width:800px) 
+{
+    .search-task, .date-task
+    {
+        display: none;
+    }
+    .others
+    {
+        overflow-x: auto;
+        width: 200px;
+    }
+}

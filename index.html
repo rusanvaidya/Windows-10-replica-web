@@ -1,0 +1,93 @@
+<link rel="stylesheet" href="static/css/home.css">
+<link rel="stylesheet" href="static/css/window.css">
+<link rel="stylesheet" href="static/css/taskbar.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preload" as="font" href="static/fonts/BebasNeue-Regular.ttf">
+
+<style>
+    @font-face {
+        font-family: "Bebas Neue";
+        src: url("static/fonts/BebasNeue-Regular.ttf") format("truetype");
+    }
+</style>
+
+<body onload="preloader_home()">
+    <div class="home-main" id="main">        
+        
+        
+        <!-- taskbar -->
+        <div class="taskbar">
+            <div class="app-task">
+                <div class="atask">
+                    <i class="fa fa-windows" id="menu-icon"></i>
+                    <div id="my-program" class="myprogram">
+                        <ul>
+                            <li><button onclick="open_chat()">&nbsp;Mail</button></li>
+                            <li><button onclick="open_notice()">&nbsp;Microsoft Store</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="search-task">
+                    <form>
+                        <input type="text" placeholder="Ask Me Anything">
+                    </form>
+                </div>
+                <div class="others">
+                    <div class="o1">
+                        <i class="fa fa-envelope" title="Mail" id="notice-active" onclick="open_notice()"></i>
+                    </div>
+                    <div class="o1">
+                        <i class="fa fa-shopping-bag" title="Microsoft Store" id="chat-active" onclick="open_chat()"></i>
+                    </div>
+                </div>
+                <div class="right-task">
+                    <table class="date-task">
+                        <td class="fa fa-battery" style="font-size: 20px; padding:2px; padding-top: 15px; padding-bottom: 15px;"></i>
+                        <td class="fa fa-wifi" style="font-size: 20px; padding:2px; padding-top: 15px; padding-bottom: 15px;"></i>
+                        <td>7:37 PM<br>
+                        15/2/22</td>
+                        <td><i class="fa fa-comment" style="font-size: 25px;"></i></td>
+                    </table>
+                    <div class="notification">
+                    </div>
+                </div>
+            </div>
+            <script>
+            function logout()
+            {
+                window.open('logout.php','_self');
+            }
+            </script>
+        </div>
+
+        <!-- profile -->
+        <div id="profilediv">
+            <div id="profiledivheader">
+                Profile
+                <span id="close-pd">&times;</span>
+            </div>
+            <div class="profile-information">
+                <h1>Your Information</h1>
+            </div>
+        </div>
+
+        <!-- Chat -->
+        <div id="chatdiv">
+            <div id="chatdivheader">
+                Microsoft Store
+                <span id="close-cd">&times;</span>
+            </div>
+        </div>
+
+        <!-- Mail -->
+        <div id="noticediv">
+        <div id="noticedivheader">
+                Mail
+                <span id="close-nd">&times;</span>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="static/js/home.js"></script>
+<script src="static/js/program.js"></script>
+<script src="static/js/preloader.js"></script>
